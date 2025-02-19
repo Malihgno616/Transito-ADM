@@ -1,0 +1,13 @@
+@charset "UFT-8";
+
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10% auto;
+  padding: 10px;
+  max-width: 500px;
+  max-height: 700px;
+  box-shadow: 1px 3px 10px var(--cor-sombra);
+}
