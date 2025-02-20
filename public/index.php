@@ -2,7 +2,6 @@
 
 session_start();
 
-
 $rotas_permitidas = require __DIR__ . '/../inc/rotas.php';
 
 $rota = $_GET['rota'] ?? 'home';
@@ -17,8 +16,11 @@ if(isset($_SESSION['usuario']) && $rota === 'login'){
   $rota = 'home';
 }
 
-if(!in_array($rota, $rotas_permitidas)){
-  $rota = '404';
+if (!in_array($rota, $rotas_permitidas)) {
+    http_response_code(404);
+    $script = '404.php';
+    require_once __DIR__ . "/../pages/{$script}";
+    exit;
 }
 
 $script = null;
@@ -32,9 +34,6 @@ switch($rota){
     break;
   case 'home':
     $script = 'home.php';
-    break;
-  case '404':
-    $script = '404.php';
     break;
   case 'logout':
     $script = 'logout.php';

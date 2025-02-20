@@ -22,6 +22,11 @@
     </div>
     <h2>Faça o login para o acesso</h2>
     <p>Preencha corretamente os campos</p>
+    <?php if(!empty($erro)):?>
+      <div class="msg-erro">
+        <?= $erro ?>
+      </div>
+    <?php endif;?> 
     <form action="?rota=login_submit" method="post" class="form-login">
       <div class="inputs">
         <label for="">Digite seu nome:</label>
@@ -31,14 +36,13 @@
         <label for="">Digite sua senha:</label>
         <input type="password" name="senha-login">
       </div>
+       
       <button type="submit">
         Logar<i class="fa fa-sign-in"></i>
       </button>
-      <?php if(!empty($erro)):?>
-        <div>
-          <?= $erro ?>
-        </div>
-      <?php endif;?>  
+     
+      
+
     </form>
   </div>
 

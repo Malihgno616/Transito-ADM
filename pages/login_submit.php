@@ -9,20 +9,31 @@ $login_user = $_POST['nome-login'];
 $senha_user = $_POST['senha-login'];
 
 if (empty($login_user) || empty($senha_user)) {
+  $_SESSION['error'] = "Por favor, preencha todos os campos.";
   header('Location: index.php?rota=login');
   exit;
 }
 
 $db = new Db();
 $params = [
-  'usuario' => $login_user
+  'usuario' => trim($login_user),
+  'senha' => trim($senha_user)
 ];
 
-$sql = "SELECT * FROM login_user WHERE user_login = :user_login";
+$sql = "SELECT * FROM login_user WHERE user_login = :user_login and pass_login = :pass_login";
 $result = $db->query($sql, $params);
 
+if (!$result) {
+  $error_message = 'Erro ao realizar a operação. Por favor, tente novamente.';
+  $_SESSION['error'] = $error_message;
+  header('Location: index.php?rota=login');
+  exit;
+}
+
 if($result['status'] === 'error'){
-  header('Location: index.php?rota=404');
+  $error_message = 'Erro ao realizar a operação. Por favor, tente novamente.';
+  $_SESSION['error'] = $error_message;
+  header('Location: index.php?rota=login');
   exit;
 }
 
