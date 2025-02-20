@@ -1,5 +1,5 @@
 <?php 
-  $erro = $_SESSION['error'];
+  $erro = $_SESSION['error'] ?? null;
   unset($_SESSION['error']);
 ?>
 
@@ -22,18 +22,23 @@
     </div>
     <h2>Faça o login para o acesso</h2>
     <p>Preencha corretamente os campos</p>
-    <form action="?rota='login_submit'" method="post" class="form-login">
+    <form action="?rota=login_submit" method="post" class="form-login">
       <div class="inputs">
         <label for="">Digite seu nome:</label>
-        <input type="text" name="name" required>
+        <input type="text" name="nome-login">
       </div>
       <div class="inputs">
         <label for="">Digite sua senha:</label>
-        <input type="password" name="email" required>
+        <input type="password" name="senha-login">
       </div>
       <button type="submit">
         Logar<i class="fa fa-sign-in"></i>
       </button>
+      <?php if(!empty($erro)):?>
+        <div>
+          <?= $erro ?>
+        </div>
+      <?php endif;?>  
     </form>
   </div>
 
