@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="../assets/styles/login.css">
   <title>LOGIN</title>
 </head>
-<body>
- 
-  <div class="container-logo">
+<body class="img-fundo">
+    
+  <div class="container-login">
     <div class="logo">
       <img src="../assets/img/file.jpeg" alt="Logo-Trânsito" width="125px">
     </div>
@@ -24,10 +24,12 @@
     <p>Preencha corretamente os campos</p>
     <form action="?rota='login_submit'" method="post" class="form-login">
       <div class="inputs">
-        <input type="text" name="name" placeholder="Name">
+        <label for="">Digite seu nome:</label>
+        <input type="text" name="name" required>
       </div>
       <div class="inputs">
-        <input type="password" name="email" placeholder="Email">
+        <label for="">Digite sua senha:</label>
+        <input type="password" name="email" required>
       </div>
       <button type="submit">
         Logar<i class="fa fa-sign-in"></i>
