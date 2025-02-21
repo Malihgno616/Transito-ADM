@@ -1,6 +1,7 @@
 <?php 
   $erro = $_SESSION['error'] ?? null;
   unset($_SESSION['error']);
+  
 ?>
 
 <!DOCTYPE html>
@@ -35,14 +36,11 @@
       <div class="inputs">
         <label for="">Digite sua senha:</label>
         <input type="password" name="senha-login">
-      </div>
-       
+      </div>      
       <button type="submit">
         Logar<i class="fa fa-sign-in"></i>
-      </button>
-     
+      </button>   
       
-
     </form>
   </div>
 

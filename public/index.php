@@ -42,6 +42,7 @@ switch($rota){
 
 
 require_once __DIR__ . '/../database/db.php';
+require_once __DIR__ . "/../pages/{$script}";
 
 //teste conexão banco de dados
 // $db = new Db();
@@ -49,6 +50,3 @@ require_once __DIR__ . '/../database/db.php';
 // echo '<pre>';
 // print_r($usuarios);
 // echo '</pre>';
-
-
-require_once __DIR__ . "/../pages/{$script}";

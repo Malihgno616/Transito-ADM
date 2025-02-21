@@ -16,8 +16,8 @@ if (empty($login_user) || empty($senha_user)) {
 
 $db = new Db();
 $params = [
-  'usuario' => trim($login_user),
-  'senha' => trim($senha_user)
+  'user_login' => $login_user,
+  'pass_login' => $senha_user
 ];
 
 $sql = "SELECT * FROM login_user WHERE user_login = :user_login and pass_login = :pass_login";
@@ -43,14 +43,7 @@ if(count($result['data']) === 0){
   exit;
 }
 
-if(!password_verify($senha_user, $result['data'][0]->pass_login)){
-  $_SESSION['error'] = "Usuário ou senha inválidos/incorretos";
-  header('Location: index.php?rota=login');
-  exit;
-}
-
 $_SESSION['usuario'] = $result['data'][0];
 
 header('Location: index.php?rota=home');
-exit;
 
