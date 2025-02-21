@@ -12,11 +12,11 @@
 <body>
 <header class="header">
   <nav class="nav-menu">
-      <a href="#"><img src="../assets/img/logo-borda-branca.png" width="200px" alt="logo transito"></a>
-      <a href="#">Home</a>
+      <a href="index.php?rota=home"><img src="../assets/img/logo-borda-branca.png" width="200px" alt="logo transito"></a>
+      <a href="index.php?rota=home">Home</a>
       <a href="#">Serviços</a>
       <a href="#">Contatos</a>
       <a href="#">Todas as notificações</a>
-      <a class="logout" href="#">Sair <abbr title="Sair"><i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a>  
+      <a class="logout" href="index.php?rota=logout">Sair <abbr title="Sair"><i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a>  
   </nav>
 </header>
