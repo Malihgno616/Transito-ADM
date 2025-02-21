@@ -4,6 +4,9 @@ return [
   'home',
   'login',
   'login_submit',
-  'logout'
+  'logout',
+  'notificacoes',
+  'servicos',
+  'contatos'
 ];
 

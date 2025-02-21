@@ -38,7 +38,16 @@ switch($rota){
   case 'logout':
     $script = 'logout.php';
     break;
-}
+  case 'servicos':
+    $script = 'servicos.php';
+    break;
+  case 'contatos':
+    $script = 'contatos.php';
+    break;
+  case 'notificacoes':
+    $script = 'notificacoes.php';
+    break;
+} 
 
 
 require_once __DIR__ . '/../database/db.php';
