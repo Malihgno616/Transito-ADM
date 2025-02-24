@@ -2,23 +2,29 @@
   <h1>Tela Inicial - Administrativo</h1>
   
   <div class="box-container">
-      <div class="box">
-        1
+      <div href="#" class="box">
+        <h2>Serviços</h2>
+        <span><a href="#"><i class="fa-solid fa-briefcase"></i></a></span>
       </div>
       <div class="box">
-        2
+        <h2>Gerenciar Usuários</h2>
+        <span><a href="#"><i class="fa-solid fa-circle-user"></i></a></span>
       </div>
       <div class="box">
-        3
+        <h2>Notificações</h2>
+        <span><a href="#"><i class="fa-solid fa-bell"></i></a></span>
       </div>
       <div class="box">
-        4
+        <h2>Contatos</h2>
+        <span><a href="#"><i class="fa-solid fa-phone"></i></a></span>
       </div>
       <div class="box">
-        5
+        <h2>Solicitações</h2>
+        <span><a href="#"><i class="fa-solid fa-envelopes-bulk"></i></a></span>
       </div>
       <div class="box">
-        6
+        <h2>Cartões</h2>
+        <span><a href="#"><i class="fa-solid fa-address-card"></i></a></span>
       </div>
   </div>
 
