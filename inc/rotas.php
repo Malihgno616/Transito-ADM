@@ -7,6 +7,14 @@ return [
   'logout',
   'notificacoes',
   'servicos',
-  'contatos'
+  'contatos',
+  'usuarios',
+  'solicitacoes',
+  'cartoes',
+  'cartao-idoso',
+  'cartao-deficiente',
+  'cartao-deficiente-renova',
+  'cartao-deficiente-cancela',
+  'cartao-deficiente-segunda-via'
 ];
 

@@ -6,12 +6,10 @@ $rotas_permitidas = require __DIR__ . '/../inc/rotas.php';
 
 $rota = $_GET['rota'] ?? 'home';
 
-// Se o usuário estiver logado
 if(!isset($_SESSION['usuario']) && $rota !=='login_submit'){
   $rota = "login";
 }
 
-// Se estiver logado e tentar entrar no login
 if(isset($_SESSION['usuario']) && $rota === 'login'){
   $rota = 'home';
 }
@@ -47,7 +45,21 @@ switch($rota){
   case 'notificacoes':
     $script = 'notificacoes.php';
     break;
-} 
+  case 'cartao-idoso':
+    $script = 'cartao-idoso.php';
+    break;
+  case 'cartao-deficiente':
+    $script = 'cartao-deficiente.php';
+    break;
+  case 'cartao-deficiente-renova':
+    $script = 'deficiente-renova.php';
+    break;
+  case 'cartao-deficiente-cancela':
+    $script = 'deficiente-cancela.php';
+  case 'cartao-deficiente-segunda-via':
+    $script = 'deficiente-segunda-via.php';
+    break;
+  } 
 
 
 require_once __DIR__ . '/../database/db.php';
