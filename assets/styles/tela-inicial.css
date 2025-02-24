@@ -69,3 +69,22 @@
   text-decoration: none;
   color: var(--titulo);
 }
+
+.user-name {
+  width: 350px;
+  height: 50px;
+  margin: 40px auto;
+  background-color: var(--cor2);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name > span {
+  font-size: 1.25rem;
+}
+
+.user-name > span > h2 {
+  font-weight: 300;
+}

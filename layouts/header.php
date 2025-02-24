@@ -1,5 +1,27 @@
+<?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once '../database/db.php';
+
+$db = new Db();
+
+$sql = "SELECT user_login FROM login_user WHERE id = 1";
+
+$response = $db->query($sql);
+
+if($response['status'] === 'success' && !empty($response['data'])) {
+    $nome = $response['data'][0]->user_login;
+} else {   
+    $nome = 'Usuário desconhecido';
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,5 +43,8 @@
       <a href="index.php?rota=contatos">Contatos</a>
       <a href="index.php?rota=notificacoes">Todas as notificações</a>
       <a class="logout" href="index.php?rota=logout">Sair <abbr title="Sair"><i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a>  
-  </nav>
+  </nav> 
 </header>
+<div class="user-name">
+  <span><h2>Bem-vindo, <?= htmlspecialchars($nome) ?? ""; ?></h2></span>
+</div>
