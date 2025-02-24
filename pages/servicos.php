@@ -1,5 +1,5 @@
 <?php 
 
 include '../layouts/header.php';
-echo "<h1>Serviços</h1>";
+include '../layouts/tela-servicos.php';
 include '../layouts/footer.php';
