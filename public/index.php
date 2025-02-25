@@ -18,7 +18,7 @@ if (!in_array($rota, $rotas_permitidas)) {
     http_response_code(404);
     $script = '404.php';
     require_once __DIR__ . "/../pages/{$script}";
-    exit;
+   
 }
 
 $script = null;
