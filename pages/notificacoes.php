@@ -1,5 +1,5 @@
 <?php 
 
 include '../layouts/header.php';
-echo "<h1>Notificações</h1>";
+include_once '../layouts/table-notificacao.php';
 include '../layouts/footer.php';

@@ -33,6 +33,7 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <link rel="stylesheet" href="../assets/styles/tela-inicial.css">
   <link rel="stylesheet" href="../assets/styles/footer.css">
   <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
+  <link rel="stylesheet" href="../assets/styles/table.css">
 </head>
 <body>
 <header class="header">
