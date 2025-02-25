@@ -1,4 +1,4 @@
-<main class="main-table">
+<main class="main-table animate__animated animate__fadeIn">
   <h1>Contatos</h1>
   <table>
     <thead>

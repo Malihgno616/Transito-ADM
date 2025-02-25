@@ -1,4 +1,4 @@
-<main class="main">
+<main class="main animate__animated animate__fadeIn">
   <h1>Tela Inicial - Administrativo</h1>
   
   <div class="box-container">

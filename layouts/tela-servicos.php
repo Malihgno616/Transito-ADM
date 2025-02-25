@@ -1,4 +1,4 @@
-<main class="main-servico">
+<main class="main-servico animate__animated animate__backInLeft">
   <h1>Serviços</h1>
   <div class="box-container">
       <div class="box">
