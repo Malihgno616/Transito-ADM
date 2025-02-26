@@ -1,8 +1,5 @@
 <main class="main-table">
   <h1>Cartão Deficiente - Segunda Via</h1>
-  <a href="index.php?rota=cartao-deficiente-segunda-via-roubo">
-    Clique aqui caso o motivo for roubo ou furto.
-  </a>
   <table>
     <thead>
       <tr>
@@ -55,3 +52,130 @@
     tableBody.appendChild(row);
   });
 </script>
+
+<main class="main-table">
+  <h1>Segunda Via - Roubo ou Furto</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>RG</th>
+        <th>Boletim de Ocorrência</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>123456</td>
+        <td>BO-123</td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="view-btn">Visualizar</button>
+          <button class="delete-btn">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+

@@ -69,10 +69,7 @@ switch($rota){
 
   case 'cartao-deficiente-segunda-via':
     $script = 'deficiente-2avia.php';
-    break;
-  case 'cartao-deficiente-segunda-via-roubo':
-    $script = 'deficiente-2avia-roubo.php';
-    break;
+    break; 
 
   } 
 

@@ -36,13 +36,14 @@
   font-weight: 300;
   border-bottom: 1px solid var(--cor-borda);
   padding: 10px;
-  text-align: left;
+  text-align: center;
   color: var(--texto-primario);
 }
 
 .main-table table tbody tr > td {
   margin-bottom: 2rem;
   padding: 10px;
+  text-align: center;
   border-bottom: 1px solid var(--cor-borda);
 }
 
