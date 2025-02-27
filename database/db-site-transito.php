@@ -9,8 +9,7 @@ class DbForms {
   
   public function queryForm($sql, $params=[]){
     try {
-      $pdo = new PDO('mysql:host=' . DB_HOST_form . ';dbname=' . DB_NAME_form,
-      DB_USER_form, DB_PASSWORD_form);
+      $pdo = new PDO('mysql:host=' . DB_HOST_form . ';dbname=' . DB_NAME_form . ';charset=utf8mb4', DB_USER_form, DB_PASSWORD_form);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $stmt = $pdo->prepare($sql);
       $stmt->execute($params);

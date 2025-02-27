@@ -8,6 +8,9 @@ require_once '../database/db.php';
 
 $db = new Db();
 
+// $db->set_charset("utf8mb4");
+
+
 $sql = "SELECT user_login FROM login_user WHERE id = 1";
 
 $response = $db->query($sql);
@@ -21,7 +24,7 @@ if($response['status'] === 'success' && !empty($response['data'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
