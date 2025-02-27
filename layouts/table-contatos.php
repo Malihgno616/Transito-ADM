@@ -26,30 +26,26 @@ $result = $db->queryForm($sql);
     </thead>
     <tbody>
       <?php 
-        
         if (is_array($result['data'])) {
-
           foreach ($result['data'] as $row){
-
             $id = htmlspecialchars($row->id);
             $nome = htmlspecialchars($row->nome);
             $email = htmlspecialchars($row->email);
             $telefone = htmlspecialchars($row->telefone);
-
-            echo "<tr>";
-            echo "<td>" . $id . "</td>";
-            echo "<td>" . $nome . "</td>";
-            echo "<td>" . $email . "</td>";
-            echo "<td>" . $telefone . "</td>";
             echo "
-            <td>
-              <button class='edit-btn'>Editar</button>
-              <button class='view-btn' >Visualizar</button>
-              <button class='delete-btn' >Excluir</button>
-            </td>";
-            echo "</tr>";
+              <tr>
+                <td>$id</td>
+                <td>$nome</td>
+                <td>$email</td>
+                <td>$telefone</td>
+                <td>
+                  <button class='edit-btn'>Editar</button>
+                  <button class='view-btn'>Visualizar</button>
+                  <button class='delete-btn'>Excluir</button>
+                </td>
+              </tr>
+            ";
           }
-
         } else {
           echo "Nenhum contato encontrado.";
         }       

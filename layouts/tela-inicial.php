@@ -22,10 +22,5 @@
         <h2>Solicitações</h2>
         <span><a href="index.php?rota=solicitacoes"><i class="fa-solid fa-envelopes-bulk"></i></a></span>
       </div>
-      <div class="box">
-        <h2>Cartões</h2>
-        <span><a href="index.php?rota=cartoes"><i class="fa-solid fa-address-card"></i></a></span>
-      </div>
   </div>
-
 </main>

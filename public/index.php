@@ -71,6 +71,10 @@ switch($rota){
     $script = 'deficiente-2avia.php';
     break; 
 
+  case 'solicitacoes':
+    $script = 'solicitacoes.php';
+    break;
+
   } 
 
 require_once __DIR__ . '/../database/db.php';
