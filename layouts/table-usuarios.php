@@ -4,7 +4,7 @@ require_once '../database/db.php';
 
 $db = new Db();
 
-$sql = "SELECT id, user_login FROM login_user";
+$sql = "SELECT id, user_login FROM login_user ORDER BY id DESC";
 
 $result = $db->query($sql);
 

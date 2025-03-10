@@ -4,7 +4,7 @@ include '../database/db-site-transito.php';
 
 $db = new DbForms();
 
-$sql = "SELECT id, nome_beneficiario, telefone_beneficiario, rg_beneficiario from cartao_deficiente";
+$sql = "SELECT id, nome_beneficiario, telefone_beneficiario, rg_beneficiario from cartao_deficiente ORDER BY id DESC";
 
 $result = $db->queryForm($sql);
 

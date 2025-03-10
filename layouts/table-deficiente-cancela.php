@@ -4,7 +4,7 @@ include '../database/db-site-transito.php';
 
 $db = new DbForms();
 
-$sql = "SELECT id, rg_solicitante, motivo_cancela FROM cancelamento_cartao_deficiente";
+$sql = "SELECT id, rg_solicitante, motivo_cancela FROM cancelamento_cartao_deficiente ORDER BY id DESC";
 
 $result = $db->queryForm($sql);
 
