@@ -28,12 +28,12 @@ if($response['status'] === 'success' && !empty($response['data'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <title>Transito ADM</title>
   <!-- <link rel="stylesheet" href="../assets/styles/global.css">
   <link rel="stylesheet" href="../assets/styles/header.css"> -->
   <!-- <link rel="stylesheet" href="../assets/styles/footer.css"> -->
-  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="../assets/styles/tela-inicial.css">
+  <!-- <link rel="stylesheet" href="../assets/styles/tela-inicial.css"> -->
   <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
   <link rel="stylesheet" href="../assets/styles/table.css">
   
