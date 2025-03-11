@@ -44,17 +44,17 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <link href="../src/output.css" rel="stylesheet">
 </head>
 <body>
-<header class="bg-yellow-400 drop-shadow-md ">
+<header class="bg-yellow-400 drop-shadow-md">
   <nav class="flex justify-around items-center p-2 text-2xl ">
       <a href="index.php?rota=home"><img src="../assets/img/logo-borda-branca.png" width="200px" alt="logo transito"></a>
       <a class="hover:text-gray-100 duration-200" href="index.php?rota=home">Home</a>
       <a class="hover:text-gray-100 duration-200" href="index.php?rota=servicos">Serviços</a>
       <a class="hover:text-gray-100 duration-200" href="index.php?rota=contatos">Contatos</a>
       <a class="hover:text-gray-100 duration-200" href="index.php?rota=notificacoes">Todas as notificações</a>
-      <a class="w-25 bg-gray-800 text-white p-1 flex justify-center items center rounded-md hover:bg-gray-200 hover:text-gray-600 duration-200" href="index.php?rota=logout">Sair <abbr title="Sair"> <i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a>  
   </nav> 
 </header>
-<div class="user-name">
-  <span><h2 class="text-3xl font-bold underline">Bem-vindo, <?= htmlspecialchars($nome) ?? ""; ?></h2></span>
+<div class="flex justify-center items-center p-8  ">
+  <span dir="rtl"><h1 class="mx-6 text-4xl font-bold ">Bem-vindo - <?= htmlspecialchars($nome) ?? ""; ?></h1></span>
+  <a class="w-25 bg-gray-800 text-white p-1 flex justify-center text-3xl items-center rounded-md hover:bg-gray-200 hover:text-gray-600 duration-200" href="index.php?rota=logout">Sair <abbr title="Sair"> <i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a> 
 </div>
 
