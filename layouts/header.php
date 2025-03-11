@@ -30,10 +30,6 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <title>Transito ADM</title>
-  <!-- <link rel="stylesheet" href="../assets/styles/global.css">
-  <link rel="stylesheet" href="../assets/styles/header.css"> -->
-  <!-- <link rel="stylesheet" href="../assets/styles/footer.css"> -->
-  <!-- <link rel="stylesheet" href="../assets/styles/tela-inicial.css"> -->
   <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
   <link rel="stylesheet" href="../assets/styles/table.css">
   
@@ -44,7 +40,7 @@ if($response['status'] === 'success' && !empty($response['data'])) {
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-<body>
+<body class="w-full h-full">
 <header class="bg-yellow-400 drop-shadow-md">
   <nav class="flex justify-around items-center p-2 text-2xl ">
       <a href="index.php?rota=home"><img src="../assets/img/logo-borda-branca.png" width="200px" alt="logo transito"></a>

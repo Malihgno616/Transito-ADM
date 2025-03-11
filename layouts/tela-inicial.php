@@ -27,11 +27,7 @@
       <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
         <a class="text-4xl" href="index.php?rota=contatos"><h2>Contatos</h2><i class="fa-solid fa-phone"></i></a>
       </div>
-    
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl" href="index.php?rota=solicitacoes"><h2>Solicitações</h2><i class="fa-solid fa-envelopes-bulk"></i></a>
-      </div>
-  
+            
     </div>
 
 </main>
