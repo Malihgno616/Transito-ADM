@@ -31,7 +31,7 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <title>Transito ADM</title>
   <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
-  <link rel="stylesheet" href="../assets/styles/table.css">
+  
   
   <link href="../src/output.css" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
