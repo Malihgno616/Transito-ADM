@@ -1,5 +1,11 @@
-
-/node_modules/
+# Ignorar o package-lock.json
 package-lock.json
+
+# Ignorar o package.json
 package.json
-README.md
+
+# Ignorar o arquivo de saída do CSS
+/src/output.css
+
+# Ignorar o diretório node_modules
+/node_modules/
