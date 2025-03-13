@@ -32,7 +32,11 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <title>Transito ADM</title>
   <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+<<<<<<< HEAD
   <link href="../src/output.css" rel="stylesheet">
+=======
+  <link href="../dist/output.css" rel="stylesheet">
+>>>>>>> 15ef7ef (adicionando modal)
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link
     rel="stylesheet"

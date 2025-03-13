@@ -107,6 +107,7 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
 
 
 <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<<<<<<< HEAD
     <div class="relative p-4 w-full max-w-lg max-h-screen md:p-6 lg:p-8">
         
         <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-300">
@@ -116,6 +117,14 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
                     Visualização
                 </h3>
                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="static-modal">
+=======
+    <div class="relative p-4 w-full max-w-xl max-h-screen md:p-6 lg:p-8">
+        
+        <div class="relative bg-amber-100 rounded-lg shadow-sm ">
+
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">         
+                <button type="button" class="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto flex justify-center items-center dark:hover:bg-red-600 dark:hover:text-white duration-100" data-modal-hide="static-modal">
+>>>>>>> 15ef7ef (adicionando modal)
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
@@ -124,13 +133,22 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
             </div>
             <!-- Modal body -->
             <div id="modal-body" class="p-4 md:p-5 space-y-4">
+<<<<<<< HEAD
               <h4 class="text-3xl font-bold text-gray-900 ">Detalhes do Contato</h4>
+=======
+              <h4 class="text-4xl  font-bold text-gray-900 ">Detalhes do Contato</h4>
+>>>>>>> 15ef7ef (adicionando modal)
               <p  class="text-2xl text-gray-900 ">Id: </p>
               <p  class="text-2xl text-gray-900 ">Nome: </p>
               <p  class="text-2xl text-gray-900 ">Email: </p>
               <p  class="text-2xl text-gray-900 ">Telefone: </p>
               <p  class="text-2xl text-gray-900 ">Mensagem: </p>
+<<<<<<< HEAD
             </div>
+=======
+            </div>          
+                   
+>>>>>>> 15ef7ef (adicionando modal)
         </div>
     </div>
 </div>
