@@ -4,11 +4,19 @@ include '../database/db-site-transito.php';
 
 $db = new DbForms();
 
-$max_page = 10;
+$page = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT) ?: 1;
+$per_page = 10;
+$offset = ($page - 1) * $per_page;
 
-$sql = "SELECT id, nome, email, telefone FROM form_contato ORDER BY id DESC LIMIT $max_page";
+$sql = "SELECT id, nome, email, telefone FROM form_contato ORDER BY id DESC LIMIT $per_page OFFSET $offset";
 
 $result = $db->queryForm($sql);
+
+// Contagem de páginas por registro
+$sql_count = "SELECT COUNT(*) as total FROM form_contato";
+$result_count = $db->queryForm($sql_count);
+$total = $result_count['data'][0]->total ?? 0;
+$total_pages = ceil($total / $per_page); // Arredondar o total de páginas
 
 // var_dump($result['data']);
 
@@ -16,7 +24,7 @@ $result = $db->queryForm($sql);
 
 <div class="flex justify-between items-center h-10 w-250 mx-auto">
   <h1 class="text-5xl text-gray-400 font-bold text-left">Contatos</h1>
-  <button type="button" class="rounded-sm text-white bg-stone-700 h-10 text-2xl shadow-md p-4 flex items-center cursor-pointer hover:bg-stone-500 duration-100" onclick="window.history.back()"><i class="fas fa-arrow-left"></i> Voltar </button>
+  <button type="button" class="rounded-sm text-white bg-stone-700 h-10 text-2xl shadow-md p-4 flex items-center cursor-pointer hover:bg-stone-500 duration-100" onclick="window.location.href = 'index.php?rota=home'">Voltar</button>
 </div>
 <main class="animate__animated animate__fadeIn p-1 rounded-md w-300 border-gray-300 mx-auto mb-25">
   <hr class="border-1 border-gray-500 w-250 mx-auto">
@@ -58,24 +66,40 @@ $result = $db->queryForm($sql);
       ?>
     </tbody>
   </table>
+    
+  <div class="flex row justify-center text-3xl gap-4 p-2 mb-4">   
 
-  <div class="flex row justify-center text-3xl gap-4 p-2 mb-4">
+    <?php // Botão Anterior
+    if ($page > 1): ?>
+        <a class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" 
+           href="index.php?rota=contatos&page=<?= $page - 1 ?>">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    <?php else: ?>
+        <span class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-400 opacity-50 cursor-not-allowed">
+            <i class="fas fa-arrow-left"></i>
+        </span>
+    <?php endif; ?>
 
-    <a class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" href="index.php?rota=contatos&page=">
-      <i class="fas fa-arrow-left"></i>
-    </a>
+    <?php // Links das páginas
+    for ($i = 1; $i <= $total_pages; $i++): ?>
+        <a class="border-2 border-gray-400 p-2 text-center <?= $i == $page ? 'bg-gray-400 text-white' : 'text-gray-800 hover:bg-gray-400 hover:text-white' ?> duration-100 rounded" 
+           href="index.php?rota=contatos&page=<?= $i ?>">
+            <?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>
+        </a>
+    <?php endfor; ?>
 
-    <a class="border-2 border-gray-400 p-2 text-center text-gray-800 hover:bg-gray-400 hover:text-white duration-100 rounded" href="index.php?rota=contatos&page=">01</a>
-
-    <a class="border-2 border-gray-400 p-2 text-center text-gray-800 hover:bg-gray-400 hover:text-white duration-100 rounded" href="index.php?rota=contatos&page=">02</a>
-
-    <a class="border-2 border-gray-400 p-2 text-center text-gray-800 hover:bg-gray-400 hover:text-white duration-100 rounded" href="index.php?rota=contatos&page=">03</a>
-
-    <a class="border-2 border-gray-400 p-2 text-center text-gray-800 hover:bg-gray-400 hover:text-white duration-100 rounded" href="index.php?rota=contatos&page=">04</a>
-            
-    <a class="rounded-r-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" href="index.php?rota=contatos&page=">
-      <i class="fas fa-arrow-right"></i>
-    </a>
+    <?php // Botão Próximo
+    if ($page < $total_pages): ?>
+        <a class="rounded-r-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" 
+           href="index.php?rota=contatos&page=<?= $page + 1 ?>">
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    <?php else: ?>
+        <span class="rounded-r-lg border-2 border-gray-400 p-2 text-gray-400 opacity-50 cursor-not-allowed">
+            <i class="fas fa-arrow-right"></i>
+        </span>
+    <?php endif; ?>
     
   </div>
 
