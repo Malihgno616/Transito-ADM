@@ -13,5 +13,6 @@ text-2xl
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script src="../assets/js/contact.js"></script>
 </body>
 </html>

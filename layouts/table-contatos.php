@@ -8,9 +8,10 @@ $page = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT) ?: 1;
 $per_page = 10;
 $offset = ($page - 1) * $per_page;
 
-$sql = "SELECT id, nome, email, telefone FROM form_contato ORDER BY id DESC LIMIT $per_page OFFSET $offset";
+$sql = "SELECT id, nome, email, telefone, mensagem FROM form_contato ORDER BY id DESC LIMIT $per_page OFFSET $offset";
 
 $result = $db->queryForm($sql);
+
 
 // Contagem de páginas por registro
 $sql_count = "SELECT COUNT(*) as total FROM form_contato";
@@ -53,9 +54,20 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
                 <td>$email</td>
                 <td>$telefone</td>
                 <td class='text-white font-bold'>
-                  <button data-modal-target='edit-modal' data-modal-toggle='edit-modal' class='border-2 border-yellow-500 text-yellow-400 rounded-sm p-2 hover:dark:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'>Editar</button>
-                  <button id='viewModal' data-modal-target='view-modal' data-modal-toggle='view-modal' class='border-2 border-blue-500 rounded-sm p-2 text-blue-400 hover:dark:bg-blue-400 hover:dark:text-white  duration-150 cursor-pointer'>Visualizar</button>
+                                   
+                  <button 
+                    data-modal-target='view-modal' 
+                    data-modal-toggle='view-modal' 
+                    data-id='$id'
+                    data-nome='".htmlspecialchars($nome, ENT_QUOTES)."'
+                    data-mensagem='".htmlspecialchars($row->mensagem, ENT_QUOTES)."' 
+                    class='view-button border-2 border-blue-500 rounded-sm p-2 text-blue-400 hover:dark:bg-blue-400 hover:dark:text-white duration-150 cursor-pointer'
+                  >
+                    Mensagem <i class='fa-regular fa-message'></i>
+                  </button>
+                              
                   <button data-modal-target='delete-modal' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir</button>
+                
                 </td>
               </tr>
             ";
@@ -124,13 +136,11 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-                <p class="text-2xl text-black">ID: <span id="nome"></span></p>
-                <p class="text-2xl text-black">Nome: <span id="nome"></span></p>
-                <p class="text-2xl text-black">Email: <span id="nome"></span></p>
-                <p class="text-2xl text-black">Telefone: <span id="nome"></span></p>
-                <p class="text-2xl text-black">Mensagem: <span id="nome"></span></p>
+              <p class="text-2xl text-black ">ID: <span id="modal-id"></span></p>
+              <p class="text-2xl text-black">Nome: <span id="modal-nome"></span></p>
+              <p class="text-2xl text-justify text-black">Mensagem: <span id="modal-mensagem"></span></p>
             </div>
-          <!-- Modal footer -->
+                    <!-- Modal footer -->
           <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
           </div>
         </div>
@@ -161,45 +171,3 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
     </div>
 </div>
 
-<!-- Modal para edição dos dados -->
-<div id="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative p-4 w-full max-w-md max-h-full">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700 animate__animated animate__fadeInDown">
-            <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                    Editar informações do usuário
-                </h3>
-                <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="edit-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-            </div>
-            <!-- Modal body -->
-            <div class="p-4 md:p-5">
-                <form class="space-y-4" action="#">
-                    <div>
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="Digite o nome" class="bg-gray-50 border border-yellow-500 text-gray-900 text-md rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5  dark:border-yellow-500 dark:placeholder-yellow-500 dark:text-white  duration-100" required />
-                    </div>
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Digite o e-mail" class="bg-gray-50 border border-yellow-500 text-gray-900 text-md rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5  dark:border-yellow-500 dark:placeholder-yellow-500 dark:text-white  duration-100" required />
-                    </div>
-                    <div>
-                      <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefone</label>
-                      <input type="text" name="phone" id="phone" placeholder="Digite o telefone" class="bg-gray-50 border border-yellow-500 text-gray-900 text-md rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5  dark:border-yellow-500 dark:placeholder-yellow-500 dark:text-white  duration-100"  required />
-                    </div>
-                    <div>
-                      <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mensagem</label>
-                      <textarea id="message" rows="4" class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-yellow-500 focus:ring-yellow-500 focus:border-yellow-500 resize-none dark:placeholder-yellow-500 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500 duration-100" placeholder="Digite a mensagem"></textarea>
-                    </div>
-                    <button type="submit" class="w-full text-black bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-yellow-500 dark:hover:bg-yellow-300 dark:focus:ring-yellow-500 duration-100">Salvar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> 
