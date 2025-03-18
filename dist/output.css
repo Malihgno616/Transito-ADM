@@ -974,9 +974,25 @@
       padding: calc(var(--spacing) * 1);
     }
   }
+  .max-sm\:p-2 {
+    @media (width < 40rem) {
+      padding: calc(var(--spacing) * 2);
+    }
+  }
   .max-sm\:p-3 {
     @media (width < 40rem) {
       padding: calc(var(--spacing) * 3);
+    }
+  }
+  .max-sm\:p-4 {
+    @media (width < 40rem) {
+      padding: calc(var(--spacing) * 4);
+    }
+  }
+  .max-sm\:text-lg {
+    @media (width < 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
   .sm\:w-30 {
