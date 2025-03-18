@@ -66,7 +66,7 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
                     Mensagem <i class='fa-regular fa-message'></i>
                   </button>
                               
-                  <button data-modal-target='delete-modal' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir</button>
+                  <button data-modal-target='delete-modal' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir <i class='fa-solid fa-xmark'></i></button>
                 
                 </td>
               </tr>
