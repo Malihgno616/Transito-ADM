@@ -10,7 +10,6 @@ $db = new Db();
 
 // $db->set_charset("utf8mb4");
 
-
 $sql = "SELECT user_login FROM login_user WHERE id = 1";
 
 $response = $db->query($sql);
@@ -42,16 +41,17 @@ if($response['status'] === 'success' && !empty($response['data'])) {
 </head>
 <body class="w-full h-full">
 <header class="bg-yellow-400 drop-shadow-md">
-  <nav class="flex justify-around items-center p-2 text-2xl ">
-      <a href="index.php?rota=home"><img src="../assets/img/logo-borda-branca.png" width="200px" alt="logo transito"></a>
-      <a class="hover:text-gray-100 duration-200" href="index.php?rota=home">Home</a>
-      <a class="hover:text-gray-100 duration-200" href="index.php?rota=servicos">Serviços</a>
-      <a class="hover:text-gray-100 duration-200" href="index.php?rota=contatos">Contatos</a>
-      <a class="hover:text-gray-100 duration-200" href="index.php?rota=notificacoes">Todas as notificações</a>
+  <nav class="flex flex-row max-md:flex-col justify-around items-center py-2 px-4 text-2xl max-md:text-2xl max-lg:p-5 max-lg:text-xl gap-4">
+      <a href="index.php?rota=home">
+        <img src="../assets/img/logo-borda-branca.png" class="w-46 md:w-32 lg:w-48"  alt="logo transito">
+      </a>
+      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=home">Home</a>
+      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=servicos">Serviços</a>
+      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=contatos">Contatos</a>
+      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=notificacoes">Todas as notificações</a>
   </nav> 
 </header>
-<div class="flex justify-center items-center p-8  ">
-  <span dir="rtl"><h1 class="mx-6 text-4xl font-bold ">Bem-vindo - <?= htmlspecialchars($nome) ?? ""; ?></h1></span>
-  <a class="w-25 bg-gray-800 text-white p-1 flex justify-center text-3xl items-center rounded-md hover:bg-gray-200 hover:text-gray-600 duration-200" href="index.php?rota=logout">Sair <abbr title="Sair"> <i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a> 
+<div class="flex justify-center items-center p-8">
+  <span dir="rtl"><h1 class="mx-1 text-2xl max-sm:p-0 max-md:text-sm max-md:text-left font-bold ">Bem-vindo - <?= htmlspecialchars($nome) ?? ""; ?></h1></span>
+  <a class="w-25 text-md max-md:text-1xl max-md:w-15 bg-gray-800 text-white p-1 flex justify-center  items-center rounded-md hover:bg-gray-200 hover:text-gray-600 duration-200" href="index.php?rota=logout">Sair <abbr title="Sair"> <i class="fa-solid fa-arrow-right-from-bracket"></i></abbr></a> 
 </div>
-
