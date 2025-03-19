@@ -74,6 +74,8 @@ text-white
   border-separate 
   border-spacing-10 
   text-2xl
+  max-md:text-xl
+  max-md:w-150
   ">
   
     <thead>
@@ -113,7 +115,7 @@ text-white
                     Mensagem <i class='fa-regular fa-message'></i>
                   </button>
                               
-                  <button data-modal-target='delete-modal' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir <i class='fa-solid fa-xmark'></i></button>
+                  <button data-modal-target='delete-modal' data-id='$id' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir <i class='fa-solid fa-xmark'></i></button>
                 
                 </td>
               </tr>
