@@ -23,13 +23,59 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
 
 ?>
 
-<div class="flex justify-between items-center h-10 w-250 mx-auto">
-  <h1 class="text-5xl text-gray-400 font-bold text-left">Contatos</h1>
-  <button type="button" class="rounded-sm text-white bg-stone-700 h-10 text-2xl shadow-md p-4 flex items-center cursor-pointer hover:bg-stone-500 duration-100" onclick="window.location.href = 'index.php?rota=home'">Voltar</button>
-</div>
-<main class="animate__animated animate__fadeIn p-1 rounded-md w-300 border-gray-300 mx-auto mb-25">
-  <hr class="border-1 border-gray-500 w-250 mx-auto">
-  <table class="table-auto mx-auto mb-5 border-separate border-spacing-10 text-2xl">
+<main class="animate__animated 
+animate__fadeIn 
+p-4 
+rounded-md 
+w-300 
+border-gray-300 
+mx-auto 
+mb-25
+max-md:w-150
+max-sm:w-90
+max-md:text-md
+lg:p-6 
+lg:w-400 
+lg:border-gray-400 
+lg:mx-0 
+lg:mb-0
+">
+  
+<h1 class="text-5xl 
+  text-center 
+  p-5 
+  text-gray-900
+  max-md:text-2xl
+  ">Contatos</h1>
+  
+<button class="p-4 
+  text-2xl
+text-white 
+  rounded-md 
+  cursor-pointer 
+  bg-gray-800 
+  hover:bg-gray-600 
+  w-40 
+  h-10 
+  flex 
+  justify-center 
+  items-center 
+  m-auto 
+  duration-100
+  max-md:text-xl
+  max-md:w-20
+  max-md:h-5
+  "
+  onclick="window.location.href='index.php?rota=home'">Voltar</button>
+   
+  <table class="table-auto 
+  mx-auto 
+  mb-5 
+  border-separate 
+  border-spacing-10 
+  text-2xl
+  ">
+  
     <thead>
       <tr>
         <th>ID</th>
@@ -39,6 +85,7 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
         <th>Ações</th>
       </tr>
     </thead>
+  
     <tbody id="list-contact">
       <?php 
         if (is_array($result['data'])) {
@@ -61,7 +108,7 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
                     data-id='$id'
                     data-nome='".htmlspecialchars($nome, ENT_QUOTES)."'
                     data-mensagem='".htmlspecialchars($row->mensagem, ENT_QUOTES)."' 
-                    class='view-button border-2 border-blue-500 rounded-sm p-2 text-blue-400 hover:dark:bg-blue-400 hover:dark:text-white duration-150 cursor-pointer'
+                    class='view-button border-2 border-blue-500 rounded-sm p-2 text-blue-400 hover:bg-blue-500 hover:dark:text-white duration-150 cursor-pointer'
                   >
                     Mensagem <i class='fa-regular fa-message'></i>
                   </button>
