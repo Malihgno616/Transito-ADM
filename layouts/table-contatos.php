@@ -41,6 +41,9 @@ if (isset($_GET['delete_id'])) {
     }
 }
 
+$tot_registros = "SELECT COUNT(*) as total FROM form_contato";
+$sql_total_reg = $db->queryForm($tot_registros);
+$registros = $sql_total_reg['data'][0]->total ?? 0;
 
 ?>
 
@@ -94,6 +97,8 @@ text-white
       Contato excluído com sucesso!
     </div>
   <?php endif; ?>
+
+  <span class="text-2xl flex justify-center p-5">Quantidade total de registros: <strong><?= $registros ?></strong></span>
 
   <table class="table-auto 
   mx-auto 
