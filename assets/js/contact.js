@@ -14,3 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Evento de clique no botão de excluir
+document
+  .querySelectorAll("[data-modal-target='delete-modal']")
+  .forEach((button) => {
+    button.addEventListener("click", function () {
+      // Pegue o ID do contato do atributo data-id
+      const contactId = this.getAttribute("data-id");
+
+      // Defina o ID no campo hidden do formulário dentro do modal
+      document.querySelector("#delete-modal form").action =
+        "index.php?rota=contatos&delete_id=" + contactId;
+    });
+  });

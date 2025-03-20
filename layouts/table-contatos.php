@@ -21,6 +21,27 @@ $total_pages = ceil($total / $per_page); // Arredondar o total de páginas
 
 // var_dump($result['data']);
 
+if (isset($_GET['delete_id'])) {
+    $delete_id = $_GET['delete_id'];
+
+    // Montar a query de exclusão
+    $sql_delete = "DELETE FROM form_contato WHERE id = :id";
+    
+    // Executar a exclusão usando o método queryForm()
+    $result = $db->queryForm($sql_delete, ['id' => $delete_id]);
+    
+    // Verificar o status da execução
+    if ($result['status'] === 'success') {
+        // Redireciona para a mesma página (com a variável page) e passa um parâmetro de sucesso
+        header("Location: index.php?rota=contatos" . "&deleted=true");
+        exit();
+    } else {
+        // Em caso de erro, mostrar uma mensagem
+        echo "Erro ao excluir: " . $result['data'];
+    }
+}
+
+
 ?>
 
 <main class="animate__animated 
@@ -40,11 +61,11 @@ lg:border-gray-400
 lg:mx-0 
 lg:mb-0
 ">
-  
+
 <h1 class="text-5xl 
   text-center 
   p-5 
-  text-gray-900
+  text-gray-90hp
   max-md:text-2xl
   ">Contatos</h1>
   
@@ -67,7 +88,13 @@ text-white
   max-md:h-5
   "
   onclick="window.location.href='index.php?rota=home'">Voltar</button>
-   
+  
+  <?php  if(isset($_GET['deleted']) && $_GET['deleted'] === 'true'): ?>
+    <div class="bg-green-500 text-white p-4 rounded-lg mt-4 mb-4 text-center">
+      Contato excluído com sucesso!
+    </div>
+  <?php endif; ?>
+
   <table class="table-auto 
   mx-auto 
   mb-5 
@@ -115,7 +142,14 @@ text-white
                     Mensagem <i class='fa-regular fa-message'></i>
                   </button>
                               
-                  <button data-modal-target='delete-modal' data-id='$id' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>Excluir <i class='fa-solid fa-xmark'></i></button>
+                  <button 
+                      data-id='$id'
+                      data-nome='".htmlspecialchars($nome, ENT_QUOTES)."' 
+                      data-modal-target='delete-modal' 
+                      data-modal-toggle='delete-modal' 
+                      class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
+                      Excluir <i class='fa-solid fa-xmark'></i>
+                  </button>
                 
                 </td>
               </tr>
@@ -207,18 +241,16 @@ text-white
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="p-4 md:p-5 text-center">
-                <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                </svg>
-                <h3 class="mb-5 text-3xl font-normal text-gray-500 dark:text-gray-400">Tem certeza que deseja exluir?</h3>
-                <button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-md inline-flex items-center px-5 py-2.5 text-center">
-                  <?php 
-                      $sql_delete = "DELETE * from form_contato WHERE id = :id";
-
-                  ?>
+                <form method="post" action="action="index.php?rota=contatos&delete_id=<?= $id ?>">
+                  <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  <h3 class="mb-5 text-3xl font-normal text-gray-500 dark:text-gray-400">Tem certeza que deseja exluir?</h3>
+                  <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-md inline-flex items-center px-5 py-2.5 text-center">
                     Sim, tenho certeza
-                </button>
-                <button data-modal-hide="delete-modal" type="button" class="py-2.5 px-5 ms-3 text-md font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100  dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Não, cancelar</button>
+                  </button>
+                  <button data-modal-hide="delete-modal" type="button" class="py-2.5 px-5 ms-3 text-md font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100  dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Não, cancelar</button>
+                </form>
             </div>
         </div>
     </div>
