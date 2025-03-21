@@ -4,7 +4,16 @@ include '../database/db-site-transito.php';
 
 $db = new DbForms();
 
-$sql = "SELECT id, nome_idoso, telefone_idoso, nascimento_idoso, rg_idoso from cartao_idoso ORDER BY id DESC LIMIT 10";
+// paginação 
+$page = filter_input(INPUT_GET, "page",FILTER_SANITIZE_NUMBER_INT) ?: 1;
+$per_page = 10;
+$offset = ($page - 1) * $per_page;
+$sql_count = "SELECT COUNT(*) as total FROM cartao_idoso";
+$result_count = $db->queryForm($sql_count);
+$total = $result_count['data'][0]->total ?? 0;
+$total_pages = ceil($total / $per_page);
+
+$sql = "SELECT id, nome_idoso, telefone_idoso, nascimento_idoso, rg_idoso from cartao_idoso ORDER BY id DESC LIMIT $per_page OFFSET $offset";
 
 $result = $db->queryForm($sql);
 
@@ -111,6 +120,43 @@ text-white
       ?>
     </tbody>
   </table>
+
+  <div class="flex row justify-center text-3xl gap-4 p-2 mb-4">   
+
+    <?php // Botão Anterior
+    if ($page > 1): ?>
+        <a class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" 
+           href="index.php?rota=cartao-idoso&page=<?= $page - 1 ?>">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    <?php else: ?>
+        <span class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-400 opacity-50 cursor-not-allowed">
+            <i class="fas fa-arrow-left"></i>
+        </span>
+    <?php endif; ?>
+
+    <?php // Links das páginas
+    for ($i = 1; $i <= $total_pages; $i++): ?>
+        <a class="border-2 border-gray-400 p-2 text-center <?= $i == $page ? 'bg-gray-400 text-white' : 'text-gray-800 hover:bg-gray-400 hover:text-white' ?> duration-100 rounded" 
+           href="index.php?rota=cartao-idoso&page=<?= $i ?>">
+            <?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>
+        </a>
+    <?php endfor; ?>
+
+    <?php // Botão Próximo
+    if ($page < $total_pages): ?>
+        <a class="rounded-r-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" 
+           href="index.php?rota=cartao-idoso&page=<?= $page + 1 ?>">
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    <?php else: ?>
+        <span class="rounded-r-lg border-2 border-gray-400 p-2 text-gray-400 opacity-50 cursor-not-allowed">
+            <i class="fas fa-arrow-right"></i>
+        </span>
+    <?php endif; ?>
+    
+  </div>
+
 </main>
 
 <!-- Modal para deletar um dado -->
