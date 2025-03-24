@@ -34,22 +34,47 @@
            max-sm:w-full
            max-sm:p-3"
       >
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl max-lg:text-2xl" href="index.php?rota=servicos"><h2>Serviços</h2><i class="fa-solid fa-briefcase"></i></a>
-      </div>
-    
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl max-lg:text-2xl" href="index.php?rota=usuarios"><h2>Gerenciar Usuários</h2><i class="fa-solid fa-circle-user"></i></a>
-      </div>
-    
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl max-lg:text-2xl" href="index.php?rota=notificacoes"><h2>Notificações</h2><i class="fa-solid fa-bell"></i></a>
-      </div>
-    
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl max-lg:text-2xl" href="index.php?rota=contatos"><h2>Contatos</h2><i class="fa-solid fa-phone"></i></a>
-      </div>
-            
+
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=servicos">
+        <div>
+          <h2 class="font-bold">Serviços</h2>
+          <span class="text-xl">Tela dos serviços</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-briefcase"></i>
+          </div>
+        </div>
+      </a>
+      
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=servicos">
+        <div>
+          <h2 class="font-bold">Gerenciar Usuários</h2>
+          <span class="text-xl">Usuário que possuem acesso do sistema</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-circle-user"></i>
+          </div>
+        </div>
+      </a>
+
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=notificacoes">
+        <div>
+          <h2 class="font-bold">Notificações</h2>
+          <span class="text-xl">Acesse as notificações</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-bell"></i>
+          </div>
+        </div>
+      </a>  
+      
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=contatos">
+        <div>
+          <h2 class="font-bold">Contatos</h2>
+          <span class="text-xl">Acesse a tabela de contatos</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-phone"></i>
+          </div>
+        </div>
+      </a>  
+                  
     </div>
 
 </main>

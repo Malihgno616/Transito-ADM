@@ -8,14 +8,36 @@
     gap-5 
     w-2/3 
     mx-auto">
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl" href="index.php?rota=cartao-deficiente-renova"><h2>Renovação Cartão Deficiente</h2><i class="fa-solid fa-repeat"></i></a>
-      </div>
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">
-        <a class="text-4xl" href="index.php?rota=cartao-deficiente-cancela"><h2>Cancelamento Cartão Deficiente</h2><i class="fa-solid fa-xmark"></i></a>
-      </div>
-      <div class="bg-gray-200 p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200">       
-        <a class="text-4xl" href="index.php?rota=cartao-deficiente-segunda-via"><h2>2ª Via Cartão Deficiente</h2><i class="fa-solid fa-address-card"></i></a>
-      </div>
+
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=cartao-deficiente-renova">
+        <div>
+          <h2 class="font-bold text-2xl">Renovação Cartão Deficiente</h2>
+          <span class="text-xl">Tabela para renovar cartão deficiente</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-repeat"></i>
+          </div>
+        </div>
+      </a>
+
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=cartao-deficiente-cancela">
+        <div>
+          <h2 class="font-bold text-2xl">Cancelamento Cartão Deficiente</h2>
+          <span class="text-xl">Tabela para cancelar cartão deficiente</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-xmark"></i>
+          </div>
+        </div>
+      </a>
+
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=cartao-deficiente-segunda-via">
+        <div>
+          <h2 class="font-bold text-2xl">2ª Via Cartão Deficiente</h2>
+          <span class="text-xl">Solicitação de segunda via</span>
+          <div>
+            <i class="text-yellow-700 fa-solid fa-address-card"></i>
+          </div>
+        </div>
+      </a>
+     
   </div>
 </main>
