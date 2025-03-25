@@ -37,17 +37,23 @@ if($response['status'] === 'success' && !empty($response['data'])) {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <style>
+    body {
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+      font-family: "Nunito", sans-serif;
+    }
+  </style>
 </head>
-<body class="w-full h-full">
+<body class="w-full h-full font-serif">
 <header class="bg-yellow-400 drop-shadow-md">
-  <nav class="flex flex-row max-md:flex-col justify-around items-center py-2 px-4 text-2xl max-md:text-2xl max-lg:p-5 max-lg:text-xl gap-4">
+  <nav class="font-medium flex flex-row max-md:flex-col justify-around items-center py-2 px-4 text-2xl max-md:text-2xl max-lg:p-5 max-lg:text-xl gap-4">
       <a href="index.php?rota=home">
         <img src="../assets/img/logo-borda-branca.png" class="w-46 md:w-32 lg:w-48"  alt="logo transito">
       </a>
-      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=home">Home</a>
-      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=servicos">Serviços</a>
-      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=contatos">Contatos</a>
-      <a class="hover:text-gray-100 duration-200 text-center" href="index.php?rota=notificacoes">Todas as notificações</a>
+      <a class="hover:text-white duration-200 text-center" href="index.php?rota=home">Home</a>
+      <a class="hover:text-white duration-200 text-center" href="index.php?rota=servicos">Serviços</a>
+      <a class="hover:text-white duration-200 text-center" href="index.php?rota=contatos">Contatos</a>
+      <a class="hover:text-white duration-200 text-center" href="index.php?rota=notificacoes">Todas as notificações</a>
   </nav> 
 </header>
 <div class="flex justify-center items-center p-8">
