@@ -45,7 +45,7 @@
         </div>
       </a>
       
-      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=servicos">
+      <a class="text-4xl max-lg:text-2xl bg-gray-100 shadow-md p-10 rounded flex justify-center items-center text-center hover:shadow-lg duration-200" href="index.php?rota=usuarios">
         <div>
           <h2 class="font-bold">Gerenciar Usuários</h2>
           <span class="text-xl">Usuário que possuem acesso do sistema</span>
