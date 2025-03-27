@@ -146,6 +146,22 @@ text-white
             $validade_cnh_idoso = htmlspecialchars($row->validade_cnh_idoso ?? '');
             $email_idoso = htmlspecialchars($row->email_idoso);
 
+            // dados do representante
+            $nome_representante = htmlspecialchars($row->nome_representante ?? '');
+            $email_representante = htmlspecialchars($row->email_representante ?? '');
+            $end_representante = htmlspecialchars($row->endereco_representante ?? '');
+            $num_end_representante = htmlspecialchars($row->numero_endereco_representante ?? '');
+            $complemento_representante = htmlspecialchars($row->complemento_representante ?? '');
+            $bairro_representante = htmlspecialchars($row->bairro_representante ?? '');
+            $cep_representante = htmlspecialchars($row->cep_representante ?? '');
+            $cidade_representante = htmlspecialchars($row->cidade_representante ?? '');
+            $uf_representante = htmlspecialchars($row->uf_representante ?? '');
+            $telefone_representante = htmlspecialchars($row->telefone_representante ?? '');
+            $rg_representante = htmlspecialchars($row->rg_representante ?? '');
+            $expedicao_representante = htmlspecialchars($row->data_expedicao_representante ?? '');
+            $expedido_representante = htmlspecialchars($row->expedido_representante ?? '');
+
+
             // Data na tabela
             $nascimento_idoso = htmlspecialchars($row->nascimento_idoso);
             $nascimento_idoso = date('d/m/Y', strtotime($nascimento_idoso));
@@ -160,6 +176,7 @@ text-white
                 <td class='text-center' >$rg_idoso</td>
                 <td class='text-white font-bold'>
                   <button 
+
                   data-id='$id' 
                   data-nome='$nome_idoso'
                   data-nascimento='$nasc_idoso'
@@ -178,6 +195,21 @@ text-white
                   data-cnh='$cnh_idoso'
                   data-validade_cnh='$validade_cnh_idoso'
                   data-email='$email_idoso'
+                  
+                  data-nome_representante='$nome_representante'
+                  data-email_representante='$email_representante'
+                  data-end_representante='$end_representante'
+                  data-num_end_representante='$num_end_representante'
+                  data-complemento_representante='$complemento_representante'
+                  data-bairro_representante='$bairro_representante'
+                  data-cep_representante='$cep_representante'
+                  data-cidade_representante='$cidade_representante'
+                  data-uf_representante='$uf_representante'
+                  data-telefone_representante='$telefone_representante'
+                  data-rg_representante='$rg_representante'
+                  data-expedicao_representante='$expedicao_representante'
+                  data-expedido_representante='$expedido_representante'
+
                   data-modal-target='edit-idoso-modal' data-modal-toggle='edit-idoso-modal' class='edit-idoso-btn border-2 
                   border-yellow-500 
                   rounded-sm
