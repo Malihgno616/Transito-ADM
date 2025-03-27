@@ -120,8 +120,6 @@ text-white
       </div>
   <?php endif; ?>
 
-
-
   <span class="text-2xl flex justify-center p-5">Quantidade total de registros: <strong><?= $registros ?></strong></span>
 
   <table class="table-auto 
@@ -184,7 +182,6 @@ text-white
             $rg_representante = htmlspecialchars($row->rg_representante ?? '');
             $expedicao_representante = htmlspecialchars($row->data_expedicao_representante ?? '');
             $expedido_representante = htmlspecialchars($row->expedido_representante ?? '');
-
 
             // Data na tabela
             $nascimento_idoso = htmlspecialchars($row->nascimento_idoso);
