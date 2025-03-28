@@ -108,6 +108,14 @@
                     <input type="email" name="floating_company" id="email-idoso" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
                     <label for="floating_company" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">E-mail do idoso</label>
                   </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="number" name="floating_company" id="#" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value="0" readonly/>
+                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" readonly>Nº do cartão</label>
+                  </div> 
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="floating_company" id="#" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value="Não Emitido" readonly/>
+                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" readonly>STATUS</label>
+                  </div> 
                 </div> 
                 <!-- Informações do representante -->
                 <h3 class="text-4xl font-medium text-gray-900 dark:text-black text-center mb-7 p-4">Informações do representante</h3>
@@ -170,7 +178,7 @@
                   <div class="relative z-0 w-full mb-5 group">
                       <input type="text" name="floating_company" id="expedido-representante" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                       <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Expedidor do RG</label>
-                  </div>                      
+                  </div>
                   </div>
                   
                   <h3 class="text-4xl font-medium text-gray-900 dark:text-black text-center mb-7 p-4">Documentos</h3>
@@ -190,10 +198,13 @@
                     </div>
                   </div>
 
-                  <button type="button" class=" text-xl text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><i class="fa-solid fa-floppy-disk"></i>Alterar</button>
-
-                  <button type="button" class=" text-xl text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><i class="fa-solid fa-print"></i>Emitir cartão</button>
-
+                  <div class="flex justify-center gap-3 p-6">
+                      <button type="button" class="text-xl text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-700 dark:hover:bg-yellow-400 dark:focus:ring-yellow-700 duration-100"><i class="fa-solid fa-floppy-disk"></i>Salvar Alteração</button>
+                      
+                      <button type="button" class="text-xl text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-700 dark:hover:bg-yellow-400 dark:focus:ring-yellow-700 duration-100"><i class="fa-solid fa-file-circle-plus"></i>Registrar Cartão</button>
+                      
+                      <button type="button" class="text-xl text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-700 dark:hover:bg-yellow-400 dark:focus:ring-yellow-700 duration-100"><i class="fa-solid fa-print"></i>Imprimir Cartão</button>
+                  </div>
               </form>
 
             </div>

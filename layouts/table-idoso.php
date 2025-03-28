@@ -193,8 +193,8 @@ text-white
                 <td class='text-center' >$nome_idoso</td>
                 <td class='text-center' >$telefone_idoso</td>
                 <td class='text-center' >$nascimento_idoso</td>
-                <td class='text-center p-5 bg-green-300'>0000</td>
-                <td class='text-center p-5 bg-green-300'>EMITIDO</td>
+                <td class='text-center p-5 bg-red-300 rounded-md'>0</td>
+                <td class='text-center p-5 bg-red-300 rounded-md'>NÃO EMITIDO</td>
                 <td class='text-center' >$rg_idoso</td>
                 <td class='text-white font-bold'>
                   <button 
