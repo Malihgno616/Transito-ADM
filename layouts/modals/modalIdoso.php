@@ -177,16 +177,15 @@
 
                   <div class="grid  md:grid-cols-3 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
-                      <img id="rg-idoso" class="w-32 h-32 object-cover rounded-full mx-auto border-2 border-gray-300" alt="Foto do Idoso">
-                      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="rg_idoso">RG do idoso</label>
+                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Idoso">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_idoso" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="rg_representante">RG do representante</label>
+                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Representante">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_representante" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="comprovante_representante">Comprovante do representante</label>
+                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="Comprovante de representante">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="comprovante_representante" type="file">
                     </div>
                   </div>
