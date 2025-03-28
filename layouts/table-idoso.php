@@ -232,6 +232,8 @@ text-white
                   data-expedicao_representante='$expedicao_representante'
                   data-expedido_representante='$expedido_representante'
 
+                  data-copia_rg='" . base64_encode($row->copia_rg_idoso) . "'
+
                   data-modal-target='edit-idoso-modal' data-modal-toggle='edit-idoso-modal' class='edit-idoso-btn border-2 
                   border-yellow-500 
                   rounded-sm

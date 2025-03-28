@@ -175,22 +175,26 @@
                   
                   <h3 class="text-4xl font-medium text-gray-900 dark:text-black text-center mb-7 p-4">Documentos</h3>
 
-                  <div class="grid md:grid-cols-1 md:gap-6">
+                  <div class="grid  md:grid-cols-3 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
+                      <img id="rg-idoso" class="w-32 h-32 object-cover rounded-full mx-auto border-2 border-gray-300" alt="Foto do Idoso">
                       <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="rg_idoso">RG do idoso</label>
-                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="rg_idoso" type="file">
+                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_idoso" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
                       <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="rg_representante">RG do representante</label>
-                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="rg_representante" type="file">
+                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_representante" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
                       <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black" for="comprovante_representante">Comprovante do representante</label>
-                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="comprovante_representante" type="file">
+                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="comprovante_representante" type="file">
                     </div>
                   </div>
 
-                  <button type="submit" class=" text-xl text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><i class="fa-solid fa-floppy-disk"></i>Alterar</button>
+                  <button type="button" class=" text-xl text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><i class="fa-solid fa-floppy-disk"></i>Alterar</button>
+
+                  <button type="button" class=" text-xl text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><i class="fa-solid fa-print"></i>Emitir cartão</button>
+
               </form>
 
             </div>

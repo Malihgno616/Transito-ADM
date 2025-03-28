@@ -53,7 +53,7 @@ document.querySelectorAll(".edit-idoso-btn").forEach((button) => {
       button.dataset.expedicao_representante;
     modal.querySelector("#expedido-representante").value =
       button.dataset.expedido_representante;
-  });
+   
 });
 
 document
