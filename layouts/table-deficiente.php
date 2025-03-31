@@ -47,7 +47,7 @@ $result_count = $db->queryForm($sql_count);
 $total = $result_count['data'][0]->total ?? 0;
 $total_pages = ceil($total / $per_page);
 
-$sql = "SELECT id, nome_beneficiario, telefone_beneficiario, rg_beneficiario from cartao_deficiente ORDER BY id DESC LIMIT $per_page OFFSET $offset";
+$sql = "SELECT * from cartao_deficiente ORDER BY id DESC LIMIT $per_page OFFSET $offset";
 
 $result = $db->queryForm($sql);
 $tot_registros = "SELECT COUNT(*) as total FROM cartao_deficiente";
@@ -123,10 +123,29 @@ text-white
       <?php  
         if (is_array($result['data'])){
           foreach ($result['data'] as $row){
+
+            
             $id = htmlspecialchars($row->id);
             $nome_beneficiario = htmlspecialchars($row->nome_beneficiario);
+            $nasc_beneficiario = htmlspecialchars($row->nasc_beneficiario);
+            $genero_beneficiario = htmlspecialchars($row->genero_beneficiario);
+            $end_beneficiario = htmlspecialchars($row->endereco_beneficiario);
+            $num_end_beneficiario = htmlspecialchars($row->numero_beneficiario);
+            $complemento_beneficiario = htmlspecialchars($row->complemento_beneficiario ?? '');
+            $bairro_beneficiario = htmlspecialchars($row->bairro_beneficiario);
+            $cep_beneficiario = htmlspecialchars($row->cep_beneficiario);
+            $cidade_beneficiario = htmlspecialchars($row->cidade_beneficiario);
+            $uf_beneficiario = htmlspecialchars($row->uf_beneficiario);
             $telefone_beneficiario = htmlspecialchars($row->telefone_beneficiario);
             $rg_beneficiario = htmlspecialchars($row->rg_beneficiario);
+            $expedicao_beneficiario = htmlspecialchars($row->expedicao_beneficiario);
+            $expedido_beneficiario = htmlspecialchars($row->expedido_beneficiario);
+            $cnh_beneficiaro = htmlspecialchars($row->cnh_beneficiario ?? '');
+            $validade_cnh_beneficiario = htmlspecialchars($row->validade_cnh_beneficiario ?? '');
+            $email_beneficiario = htmlspecialchars($row->email_beneficiario ?? '');
+            
+            // var_dump($row);
+
             echo "
               <tr class='text-lg p-4 mb-3'>
                 <td class='text-center' >$id</td>
@@ -140,21 +159,21 @@ text-white
                   data-id_beneficiario='$id'
                   data-nome_bene = '$nome_beneficiario'
                   data-nasc_bene = '$nasc_beneficiario'
-                  data-genero_ben = '$genero_beneficiario'
-                  data-end_ben = '$end_beneficiario'
-                  data-num_end_ben = '$num_end_beneficiario'
-                  data-complemento_ben = '$complemento_beneficiario'
-                  data-bairro_ben = '$bairro_beneficiario'
-                  data-cep_ben = '$cep_beneficiario'
-                  data-cidade_ben = '$cidade_beneficiario'
-                  data-uf_ben = '$uf_beneficiario'
+                  data-genero_bene = '$genero_beneficiario'
+                  data-end_bene = '$end_beneficiario'
+                  data-num_end_bene = '$num_end_beneficiario'
+                  data-complemento_bene = '$complemento_beneficiario'
+                  data-bairro_bene = '$bairro_beneficiario'
+                  data-cep_bene = '$cep_beneficiario'
+                  data-cidade_bene = '$cidade_beneficiario'
+                  data-uf_bene = '$uf_beneficiario'
                   data-telefone_bene = '$telefone_beneficiario'
                   data-rg_bene = '$rg_beneficiario'
                   data-expedicao_bene = '$expedicao_beneficiario'
                   data-expedido_bene = '$expedido_beneficiario'
                   data-cnh_bene = '$cnh_beneficiaro'
-                  data-val_cnh_ben = '$validade_cnh_beneficiario'
-                  data-email_ben = '$email_beneficiario'
+                  data-val_cnh_bene = '$validade_cnh_beneficiario'
+                  data-email_bene = '$email_beneficiario'
                   data-modal-target='edit-deficiente-modal' data-modal-toggle='edit-deficiente-modal' class='edit-deficiente-btn border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
                   <button data-modal-target='delete-modal-deficiente' data-modal-toggle='delete-modal-deficiente' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
                   <i class='fa-solid fa-xmark'></i></button>
