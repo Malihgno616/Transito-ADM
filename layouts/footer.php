@@ -15,5 +15,6 @@ class="bg-gray-600
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <script src="../assets/js/contact.js"></script>
 <script src="../assets/js/tableIdoso.js"></script>
+<script src="../assets/js/tableDeficiente.js"></script>
 </body>
 </html>

@@ -132,12 +132,31 @@ text-white
                 <td class='text-center' >$id</td>
                 <td class='text-center' >$nome_beneficiario</td>
                 <td class='text-center' >$telefone_beneficiario</td>
-                <td class='text-center p-5 bg-green-300'>00000</td>
-                <td class='text-center p-5 bg-green-300'>EMITIDO</td>
+                <td class='text-center p-5 bg-red-300 rounded-md'>0</td>
+                <td class='text-center p-5 bg-red-300 rounded-md'>NÃO EMITIDO</td>
                 <td class='text-center' >$rg_beneficiario</td>
                 <td class='text-white font-bold'>
-                  <button data-id='$id' data-modal-target='#' data-modal-toggle='#' class='border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
-                  <button data-modal-target='#' data-modal-toggle='#' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
+                  <button 
+                  data-id_beneficiario='$id'
+                  data-nome_bene = '$nome_beneficiario'
+                  data-nasc_bene = '$nasc_beneficiario'
+                  data-genero_ben = '$genero_beneficiario'
+                  data-end_ben = '$end_beneficiario'
+                  data-num_end_ben = '$num_end_beneficiario'
+                  data-complemento_ben = '$complemento_beneficiario'
+                  data-bairro_ben = '$bairro_beneficiario'
+                  data-cep_ben = '$cep_beneficiario'
+                  data-cidade_ben = '$cidade_beneficiario'
+                  data-uf_ben = '$uf_beneficiario'
+                  data-telefone_bene = '$telefone_beneficiario'
+                  data-rg_bene = '$rg_beneficiario'
+                  data-expedicao_bene = '$expedicao_beneficiario'
+                  data-expedido_bene = '$expedido_beneficiario'
+                  data-cnh_bene = '$cnh_beneficiaro'
+                  data-val_cnh_ben = '$validade_cnh_beneficiario'
+                  data-email_ben = '$email_beneficiario'
+                  data-modal-target='edit-deficiente-modal' data-modal-toggle='edit-deficiente-modal' class='edit-deficiente-btn border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
+                  <button data-modal-target='delete-modal-deficiente' data-modal-toggle='delete-modal-deficiente' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
                   <i class='fa-solid fa-xmark'></i></button>
                 </td>
               </tr>
@@ -186,3 +205,7 @@ text-white
   </div>
 </main>
 
+<?php 
+include 'modals/modalDeficiente.php';
+include 'modals/deleteModalDeficiente.php';
+?>
