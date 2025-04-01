@@ -33,6 +33,23 @@ document.querySelectorAll(".edit-deficiente-btn").forEach((button) => {
       button.dataset.val_cnh_bene;
     modal.querySelector("#email-beneficiario").value =
       button.dataset.email_bene;
-      
+
+    // Informações do médico
+    modal.querySelector("#nome-medico").value = button.dataset.nome_medico;
+    modal.querySelector("#registro-crm").value = button.dataset.crm_medico;
+    modal.querySelector("#telefone-medico").value =
+      button.dataset.telefone_medico;
+    modal.querySelector("#local-atendimento").value =
+      button.dataset.endereco_medico;
+
+    // Informações médicas
+    const deficienciasArray = button.dataset.deficiencias_ambulatorias
+      ? button.dataset.deficiencias_ambulatorias.split(/\s*,\s*/)
+      : [];
+    modal.querySelectorAll(".deficiencias").forEach((checkbox) => {
+      console.log("Checkbox ID:", checkbox.id);
+      checkbox.checked = deficienciasArray.includes(checkbox.id);
+      console.log("Checkbox checked:", checkbox.checked);
     });
+  });
 });

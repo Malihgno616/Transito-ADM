@@ -124,7 +124,7 @@ text-white
         if (is_array($result['data'])){
           foreach ($result['data'] as $row){
 
-            
+            // Informações do beneficiário
             $id = htmlspecialchars($row->id);
             $nome_beneficiario = htmlspecialchars($row->nome_beneficiario);
             $nasc_beneficiario = htmlspecialchars($row->nasc_beneficiario);
@@ -144,7 +144,39 @@ text-white
             $validade_cnh_beneficiario = htmlspecialchars($row->validade_cnh_beneficiario ?? '');
             $email_beneficiario = htmlspecialchars($row->email_beneficiario ?? '');
             
-            // var_dump($row);
+            // Informações do médico
+            $nome_medico = htmlspecialchars($row->nome_medico);
+            $crm_medico = htmlspecialchars($row->crm);
+            $telefone_medico = htmlspecialchars($row->telefone_medico);
+            $endereco_medico = htmlspecialchars($row->local_atendimento_medico);
+
+            // Informações médicas
+            $deficiencias = htmlspecialchars($row->deficiencia_ambulatoria);
+
+            // Mapeamento de texto para ID das checkboxes
+            $mapeamento_deficiencias = [
+                "Deficiência Física" => "deficiencia-fisica",
+                "Membro(s) Superior(es)" => "membros-superiores",
+                "Membro(s) Inferior(es)" => "membros-inferiores",
+                "Cadeira de Rodas" => "cadeira-de-rodas",
+                "Aparelhagem Ortopédica" => "aparelhagem-ortopedica",
+                "Prótese" => "protese",
+                "Incapacidade Mental" => "incapacidade-mental",
+                "Dificuldade de Locomoção" => "dificuldade-de-locomocao"
+            ];
+
+            // Converte os textos do banco para IDs
+            $deficiencias_array = explode(', ', $deficiencias);
+            $deficiencias_ids = [];
+            foreach ($deficiencias_array as $deficiencia) {
+                $deficiencia = trim($deficiencia); // Remove espaços extras
+                if (isset($mapeamento_deficiencias[$deficiencia])) {
+                    $deficiencias_ids[] = $mapeamento_deficiencias[$deficiencia];
+                }
+            }
+            $deficiencias_string = implode(',', $deficiencias_ids);
+
+            // var_dump($row->deficiencia_ambulatoria);
 
             echo "
               <tr class='text-lg p-4 mb-3'>
@@ -156,6 +188,7 @@ text-white
                 <td class='text-center' >$rg_beneficiario</td>
                 <td class='text-white font-bold'>
                   <button 
+                  
                   data-id_beneficiario='$id'
                   data-nome_bene = '$nome_beneficiario'
                   data-nasc_bene = '$nasc_beneficiario'
@@ -174,6 +207,14 @@ text-white
                   data-cnh_bene = '$cnh_beneficiaro'
                   data-val_cnh_bene = '$validade_cnh_beneficiario'
                   data-email_bene = '$email_beneficiario'
+                  
+                  data-nome_medico = '$nome_medico'
+                  data-crm_medico = '$crm_medico'
+                  data-telefone_medico = '$telefone_medico'
+                  data-endereco_medico = '$endereco_medico'
+
+                  data-deficiencias_ambulatorias = '$deficiencias_string'
+
                   data-modal-target='edit-deficiente-modal' data-modal-toggle='edit-deficiente-modal' class='edit-deficiente-btn border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
                   <button data-modal-target='delete-modal-deficiente' data-modal-toggle='delete-modal-deficiente' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
                   <i class='fa-solid fa-xmark'></i></button>
