@@ -155,37 +155,37 @@
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="membros-inferiores" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="membros-inferiores" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="membros-inferiores" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Membro(s) Inferior(es) </label>
                               </div>
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="cadeira-de-rodas" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="cadeira-de-rodas" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="cadeira-de-rodas" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Cadeira de Rodas</label>
                               </div>
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="aparelhagem-ortopedica" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="aparelhagem-ortopedica" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="aparelhagem-ortopedica" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Aparelhagem Ortopédica </label>
                               </div>
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="protese" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="protese" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="protese" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Prótese</label>
                               </div>
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="incapacidade-mental" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="incapacidade-mental" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="incapacidade-mental" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Incapacidade Mental</label>
                               </div>
                           </li>
                           <li class="w-full rounded-t-lg dark:border-gray-600">
                               <div class="flex items-center ps-3">
-                                  <input id="dificuldade-de-locomocao" type="checkbox" value="" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
+                                  <input id="dificuldade-de-locomocao" type="checkbox" class="deficiencias w-4 h-4 accent-yellow-600 bg-yellow-100 border-yellow-300 rounded-sm focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-yellow-700 dark:focus:ring-offset-yellow-700 focus:ring-2 dark:bg-yellow-600 dark:border-yellow-500">
                                   <label for="dificuldade-de-locomocao" class="w-full py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">Dificuldade de Locomoção</label>
                               </div>
                           </li>
@@ -194,32 +194,32 @@
                   </div> 
                   <h3 class="mt-2 text-4xl font-medium text-gray-900 dark:text-black text-center mb-2 p-4">Período de restrição médica</h3>
                   <div class="grid md:grid-cols-2 md:gap-6">
-                      <div class="flex items-center ps-4 p-3 border border-gray-200 rounded-sm dark:border-gray-700">
-                          <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-yellow-700 dark:border-gray-600">
-                          <label for="bordered-radio-1" class="w-full py-4 ms-2 text-xl font-medium text-gray-900 dark:text-gray-300">Permanente</label>
-                      </div>
-                      <div class="flex items-center ps-4 p-3 border border-gray-200 rounded-sm dark:border-gray-700">
-                          <input checked id="bordered-radio-2" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-yellow-700 dark:border-gray-600">
-                          <label for="bordered-radio-2" class="w-full py-4 ms-2 text-xl font-medium text-gray-900 dark:text-gray-300">Temporário</label>
-                      </div>
+                    <div class="flex items-center ps-4 p-3 border border-gray-200 rounded-sm dark:border-gray-700">
+                        <input id="permanente" type="radio" value="Permanente" name="restricao" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-yellow-700 dark:border-gray-600">
+                        <label for="permanente" class="w-full py-4 ms-2 text-xl font-medium text-gray-900 dark:text-gray-300">Permanente</label>
+                    </div>
+                    <div class="flex items-center ps-4 p-3 border border-gray-200 rounded-sm dark:border-gray-700">
+                        <input id="temporaria" type="radio" value="Temporária" name="restricao" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-yellow-700 dark:border-gray-600">
+                        <label for="temporaria" class="w-full py-4 ms-2 text-xl font-medium text-gray-900 dark:text-gray-300">Temporária</label>
+                    </div>
                       <div class="relative z-0 w-full mb-5 group">
-                        <input type="date" name="floating_nascimento" id="" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-500 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="dd-mm-yyyy"/>
+                        <input type="date" name="floating_nascimento" id="data-inicio" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-500 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="dd-mm-yyyy"/>
                         <label for="floating_password" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Data de início</label>
                       </div>
                       <div class="relative z-0 w-full mb-5 group">
-                        <input type="date" name="floating_nascimento" id="" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-500 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="dd-mm-yyyy"/>
+                        <input type="date" name="floating_nascimento" id="data-fim" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-500 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="dd-mm-yyyy"/>
                         <label for="floating_password" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Data de fim</label>
                       </div>
                     </div>
                     <div class="relative z-0 w-full h-200 group p-10">
                         <textarea
-                            id="floating_textarea"
+                            id="descricao-cid"
                             rows="4"
                             class="block py-2.5 px-4 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                         ></textarea>
                         <label
-                            for="floating_textarea"
+                            for="descricao-cid"
                             class="absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-4 origin-[0] bg-white dark:bg-gray-900 px-1 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                           Descrição e CID da lesão que justifique a incapacidade ou dificuldade ambular

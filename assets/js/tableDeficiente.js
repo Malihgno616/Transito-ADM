@@ -47,9 +47,16 @@ document.querySelectorAll(".edit-deficiente-btn").forEach((button) => {
       ? button.dataset.deficiencias_ambulatorias.split(/\s*,\s*/)
       : [];
     modal.querySelectorAll(".deficiencias").forEach((checkbox) => {
-      console.log("Checkbox ID:", checkbox.id);
       checkbox.checked = deficienciasArray.includes(checkbox.id);
-      console.log("Checkbox checked:", checkbox.checked);
     });
+
+    const restricaoValue = button.dataset.restricao_medica;
+    modal.querySelectorAll('input[name="restricao"]').forEach((radio) => {
+      radio.checked = radio.value === restricaoValue;
+    });
+
+    modal.querySelector("#data-inicio").value = button.dataset.inicio;
+    modal.querySelector("#data-fim").value = button.dataset.fim;
+    modal.querySelector("#descricao-cid").value = button.dataset.descricao_cid;
   });
 });

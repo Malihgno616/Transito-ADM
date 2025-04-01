@@ -175,6 +175,18 @@ text-white
                 }
             }
             $deficiencias_string = implode(',', $deficiencias_ids);
+            
+            $restricao_medica = htmlspecialchars($row->periodo_restricao_medica);
+            // No PHP, force a conversão para maiúsculas/minúsculas e acentos:
+            $restricao_medica = match(strtolower($row->periodo_restricao_medica)) {
+                'permanente' => 'Permanente',
+                'temporaria', 'temporária' => 'Temporária',
+                default => 'Temporária'
+            };
+
+            $data_inicio = htmlspecialchars($row->data_inicio);
+            $data_fim = htmlspecialchars($row->data_fim ?? '');
+            $descricao_cid = htmlspecialchars($row->cid);
 
             // var_dump($row->deficiencia_ambulatoria);
 
@@ -214,6 +226,11 @@ text-white
                   data-endereco_medico = '$endereco_medico'
 
                   data-deficiencias_ambulatorias = '$deficiencias_string'
+                  
+                  data-restricao_medica = '$restricao_medica'
+                  data-inicio = '$data_inicio'
+                  data-fim = '$data_fim'
+                  data-descricao_cid = '$descricao_cid'
 
                   data-modal-target='edit-deficiente-modal' data-modal-toggle='edit-deficiente-modal' class='edit-deficiente-btn border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
                   <button data-modal-target='delete-modal-deficiente' data-modal-toggle='delete-modal-deficiente' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
