@@ -58,5 +58,33 @@ document.querySelectorAll(".edit-deficiente-btn").forEach((button) => {
     modal.querySelector("#data-inicio").value = button.dataset.inicio;
     modal.querySelector("#data-fim").value = button.dataset.fim;
     modal.querySelector("#descricao-cid").value = button.dataset.descricao_cid;
+
+    // campos do representante
+    modal.querySelector("#nome-representante").value =
+      button.dataset.nome_representante;
+    modal.querySelector("#email-representante").value =
+      button.dataset.email_representante;
+    modal.querySelector("#end-representante").value =
+      button.dataset.end_representante;
+    modal.querySelector("#num-end-representante").value =
+      button.dataset.num_end_representante;
+    modal.querySelector("#complemento-representante").value =
+      button.dataset.complemento_representante;
+    modal.querySelector("#bairro-representante").value =
+      button.dataset.bairro_representante;
+    modal.querySelector("#cep-representante").value =
+      button.dataset.cep_representante;
+    modal.querySelector("#cidade-representante").value =
+      button.dataset.cidade_representante;
+    modal.querySelector("#uf-representante").value =
+      button.dataset.uf_representante;
+    modal.querySelector("#telefone-representante").value =
+      button.dataset.telefone_representante;
+    modal.querySelector("#rg-representante").value =
+      button.dataset.rg_representante;
+    modal.querySelector("#expedicao-representante").value =
+      button.dataset.expedicao_representante;
+    modal.querySelector("#expedido-representante").value =
+      button.dataset.expedido_representante;
   });
 });

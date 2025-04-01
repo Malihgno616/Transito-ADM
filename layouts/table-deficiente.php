@@ -188,6 +188,21 @@ text-white
             $data_fim = htmlspecialchars($row->data_fim ?? '');
             $descricao_cid = htmlspecialchars($row->cid);
 
+            // informações do representante
+            $nome_representante = htmlspecialchars($row->nome_representante ?? '');
+            $email_representante = htmlspecialchars($row->email_representante ?? '');
+            $end_representante = htmlspecialchars($row->endereco_representante ?? '');
+            $num_end_representante = htmlspecialchars($row->num_representante ?? '');
+            $complemento_representante = htmlspecialchars($row->complemento_representante ?? '');
+            $bairro_representante = htmlspecialchars($row->bairro_representante ?? '');
+            $cep_representante = htmlspecialchars($row->cep_representante ?? '');
+            $cidade_representante = htmlspecialchars($row->cidade_representante ?? '');
+            $uf_representante = htmlspecialchars($row->uf_representante ?? '');
+            $telefone_representante = htmlspecialchars($row->telefone_representante ?? '');
+            $rg_representante = htmlspecialchars($row->rg_representante ?? '');
+            $expedicao_representante = htmlspecialchars($row->data_expedicao_representante ?? '');
+            $expedido_representante = htmlspecialchars($row->expedido_representante ?? '');
+
             // var_dump($row->deficiencia_ambulatoria);
 
             echo "
@@ -231,6 +246,20 @@ text-white
                   data-inicio = '$data_inicio'
                   data-fim = '$data_fim'
                   data-descricao_cid = '$descricao_cid'
+
+                  data-nome_representante='$nome_representante'
+                  data-email_representante='$email_representante'
+                  data-end_representante='$end_representante'
+                  data-num_end_representante='$num_end_representante'
+                  data-complemento_representante='$complemento_representante'
+                  data-bairro_representante='$bairro_representante'
+                  data-cep_representante='$cep_representante'
+                  data-cidade_representante='$cidade_representante'
+                  data-uf_representante='$uf_representante'
+                  data-telefone_representante='$telefone_representante'
+                  data-rg_representante='$rg_representante'
+                  data-expedicao_representante='$expedicao_representante'
+                  data-expedido_representante='$expedido_representante'
 
                   data-modal-target='edit-deficiente-modal' data-modal-toggle='edit-deficiente-modal' class='edit-deficiente-btn border-2 border-yellow-500 rounded-sm p-2 text-yellow-500 hover:bg-yellow-500 hover:dark:text-white duration-150 cursor-pointer'><i class='fa-solid fa-pencil'></i></button>
                   <button data-modal-target='delete-modal-deficiente' data-modal-toggle='delete-modal-deficiente' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
