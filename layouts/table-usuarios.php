@@ -52,7 +52,7 @@ text-white
   "
   onclick="window.location.href='index.php?rota=home'">Voltar</button>
   
-  <button class="p-4 
+  <button data-modal-target="cad-user-modal" data-modal-toggle="cad-user-modal" class="p-4 
   text-2xl
   text-white 
   rounded-md 
@@ -117,3 +117,7 @@ text-white
     </tbody>
   </table>
 </main>
+
+<?php 
+include "modals/modalCadUsuario.php";
+?>
