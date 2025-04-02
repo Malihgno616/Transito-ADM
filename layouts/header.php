@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 ini_set('default_charset', 'UTF-8');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -8,19 +9,31 @@ require_once '../database/db.php';
 
 $db = new Db();
 
-// $db->set_charset("utf8mb4");
-
-$sql = "SELECT user_login FROM login_user WHERE id = 1";
-
-$response = $db->query($sql);
-
-if($response['status'] === 'success' && !empty($response['data'])) {
-    $nome = $response['data'][0]->user_login;
-} else {   
-    $nome = 'Usuário desconhecido';
+// Verifique se o usuário está autenticado e a chave 'usuario' está definida
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']->id)) {
+    die('Usuário não autenticado.');
 }
 
+// Acesse o 'id' do usuário a partir do objeto na sessão
+$id_usuario = $_SESSION['usuario']->id;
+
+$sql = "SELECT * FROM login_user WHERE id = :id";
+$params = array(':id' => $id_usuario);
+
+$response = $db->query($sql, $params);
+
+if ($response['status'] !== 'success') {
+    echo 'Erro na consulta ou na execução da query.';
+    exit;
+}
+
+if (empty($response['data'])) {
+    $nome = 'Usuário desconhecido';
+} else {
+    $nome = htmlspecialchars($response['data'][0]->user_login);
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -29,7 +42,6 @@ if($response['status'] === 'success' && !empty($response['data'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <title>Transito ADM</title>
-  <link rel="stylesheet" href="../assets/styles/tela-servicos.css">
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
   <link href="../dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

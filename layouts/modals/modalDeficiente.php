@@ -17,7 +17,7 @@
             <div class="p-4 md:p-5 space-y-4">
               <form class="max-w-4xl mx-auto">
                 <!-- Informações do Beneficiário -->
-                 <div class="p-20 m-20">
+                 <div class="p-2 m-2">
                   <span class="font-bold">ID:<span id="id-beneficiario" class="text-yellow-700"></span></span>
                 </div>
                 <h3 class="text-4xl font-medium text-gray-900 dark:text-black text-center mb-7 p-4">
@@ -295,15 +295,15 @@
 
                   <div class="grid md:grid-cols-4 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
-                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Beneficiário">
+                      <img id="rg-idoso" class="w-70 h-50  object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Beneficiário">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_idoso" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Representante">
+                      <img id="rg-idoso" class="w-70 h-50  object-cover rounded-md mx-auto border-2 border-gray-300" alt="RG do Representante">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="rg_representante" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                      <img id="rg-idoso" class="w-150 h-150 object-cover rounded-md mx-auto border-2 border-gray-300" alt="Comprovante de representante">
+                      <img id="rg-idoso" class="w-70 h-50  object-cover rounded-md mx-auto border-2 border-gray-300" alt="Comprovante de representante">
                       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300" id="comprovante_representante" type="file">
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
