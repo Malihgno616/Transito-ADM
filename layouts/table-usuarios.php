@@ -145,7 +145,7 @@ text-white
     <?php // Botão Anterior
     if ($page > 1): ?>
         <a class="rounded-l-lg border-2 border-gray-400 p-2 text-gray-800 hover:bg-gray-400 hover:text-white duration-100" 
-           href="index.php?rota=usarios&page=<?= $page - 1 ?>">
+           href="index.php?rota=usuarios&page=<?= $page - 1 ?>">
             <i class="fas fa-arrow-left"></i>
         </a>
     <?php else: ?>
