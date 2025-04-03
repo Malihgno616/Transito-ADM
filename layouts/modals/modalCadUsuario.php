@@ -1,3 +1,36 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Defina a variável $msg apenas após o envio do formulário
+    $msg = "";  // Inicializa a mensagem
+
+    $nome = trim($_POST['user-name']);
+    $senha1 = $_POST['user-pass1'];
+    $senha2 = $_POST['user-pass2'];
+
+    // Lógica para verificar os dados do formulário
+    if (empty($nome) || empty($senha1) || empty($senha2)) {
+        $msg = "Preencha todos os campos!";
+    } elseif ($senha1 !== $senha2) {
+        $msg = "As senhas não coincidem!";
+    } else {
+        $sql = "SELECT * FROM login_user WHERE user_login = ?";
+        $result = $db->query($sql, [$nome]);
+
+        // Verifica se o usuário já existe
+        if ($result['status'] !== 'success') {
+            $msg = "Erro no servidor";
+        } elseif (count($result['data']) > 0) {
+            // Se o usuário já existe, atribui uma mensagem de erro
+            $msg = "Usuário já existe!";
+        } else {
+            // Cadastro do usuário, se tudo estiver correto
+            $db->addUser($nome, $senha1);
+            $msg = "Usuário criado com sucesso!";
+        }
+    }
+}
+?>
+
 <div id="cad-user-modal" tabindex="-1" aria-hidden="true" class="animate__animated animate__fadeIn hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <!-- Modal content -->
@@ -16,22 +49,25 @@
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5">
-                <form class="space-y-4" action="#">
+                
+                <form class="space-y-4" action="?rota=usuarios" method="post">
                   <div class="relative z-0 w-full mb-5 group">
-                      <input type="text" name="floating_company" id="bairro-beneficiario" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nome do usuário</label>
+                      <input type="text" name="user-name" id="user-name" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                      <label for="user-name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nome do usuário</label>
                   </div>
                   <div class="relative z-0 w-full mb-5 group">
-                      <input type="password" name="floating_company" id="bairro-beneficiario" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Digite a senha</label>
+                      <input type="password" name="user-pass1" id="user-pass1" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                      <label for="user-pass1" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Digite a senha</label>
                   </div>
                   <div class="relative z-0 w-full mb-5 group">
-                      <input type="password" name="floating_company" id="bairro-beneficiario" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Digite a senha novamente</label>
+                      <input type="password" name="user-pass2" id="user-pass2" class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                      <label for="user-pass2" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Digite a senha novamente</label>
                   </div>
-                    <button type="button" class="text-xl text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg flex justify-center items-center m-auto sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-700 dark:hover:bg-yellow-400 dark:focus:ring-yellow-700 duration-100">Cadastrar</button>
+                    <button type="submit" class="text-xl text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg flex justify-center items-center m-auto sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-700 dark:hover:bg-yellow-400 dark:focus:ring-yellow-700 duration-100">Cadastrar</button>
                 </form>
             </div>
         </div>
     </div>
 </div> 
+
+
