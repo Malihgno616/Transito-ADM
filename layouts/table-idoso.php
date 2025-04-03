@@ -249,7 +249,7 @@ text-white
                   <button
                   data-id='$id'
                   data-nome='". htmlspecialchars($nome_idoso, ENT_QUOTES) ."'
-                  data-modal-target='delete-modal' data-modal-toggle='delete-modal' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
+                  data-modal-target='delete-modal-idoso' data-modal-toggle='delete-modal-idoso' class='border-2 border-red-500 rounded-sm p-2 text-red-500 hover:dark:bg-red-500 hover:text-white duration-150 cursor-pointer'>
                   <i class='fa-solid fa-xmark'></i></button>
                 </td>
               </tr>

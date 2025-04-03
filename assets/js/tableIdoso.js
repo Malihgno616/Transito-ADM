@@ -53,19 +53,18 @@ document.querySelectorAll(".edit-idoso-btn").forEach((button) => {
       button.dataset.expedicao_representante;
     modal.querySelector("#expedido-representante").value =
       button.dataset.expedido_representante;
-    
   });
 });
 
 document
-  .querySelectorAll("[data-modal-target='delete-modal']")
+  .querySelectorAll("[data-modal-target='delete-modal-idoso']")
   .forEach((button) => {
     button.addEventListener("click", function () {
       // 'this' aqui se refere ao botão clicado
       const idosoId = button.getAttribute("data-id"); // Usando 'button' diretamente
 
       // Corrigindo o seletor do modal
-      document.querySelector("#delete-modal form").action =
+      document.querySelector("#delete-modal-idoso .form-idoso").action =
         "index.php?rota=cartao-idoso&delete_id=" + idosoId;
     });
   });
