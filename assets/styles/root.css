@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --cor1: #f2f2f2;
+
+  --cor2: #f2e8b3;
+
+  --cor3: #f2c029;
+
+  --cor4: #f2ae2e;
+
+  --cor5: #585859;
+
+  --cor-sombra: rgba(0, 0, 0, 0.459);
+
+  --cor-fundo: #f7f7f7;
+
+  --table-head: #413d365b;
+
+  --titulo: #272727;
+
+  --font-geral: "Roboto", sans-serif;
+}
